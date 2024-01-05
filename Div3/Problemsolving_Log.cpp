@@ -6,47 +6,38 @@
 /*   By: asodor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 21:27:31 by asodor            #+#    #+#             */
-/*   Updated: 2024/01/05 07:11:59 by asodor           ###   ########.fr       */
+/*   Updated: 2024/01/05 18:33:28 by asodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
 #include <string>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 int main() {
-    int t;
+    short t;
     cin >> t;
-    int i = 0;
+
     while (t--) {
-        int n;
-        string log;
-        cin >> n >> log;
+	    short n;
+	    string s;
+	    cin >> n;
+	    cin >> s;
+	    short sol = 0;
+	    unordered_map<char, int> umap;
+	    for (auto &it : s)
+	    {
+		    umap[it]++;
+	    }
+	    for (auto &it : umap)
+	    {
+		    if (it.second >= (it.first - 'A' + 1))
+			    sol++;
+	    }
+	    cout <<sol<< endl;
 
-        map<char, int> dic;
-
-        int timeSpent = 0;
-        int solvedProblem = 0;
-
-        for (char ch : log) {
-            if (dic.find(ch) == dic.end()) {
-                dic[ch] = 1;
-		cout << ch << " ";
-                timeSpent += (ch - 'A' + 1);
-		cout <<"timeSpent " << timeSpent <<';';
-                if (timeSpent <= n) {
-                    solvedProblem++;
-                } else {
-                    break;
-		}
-		i++;
-		cout <<"solved Problem" << solvedProblem << ';';
-            }
-        }
-        cout << solvedProblem << endl;
     }
-
     return 0;
 }
 
