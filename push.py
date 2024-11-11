@@ -20,4 +20,4 @@ print("Committed changes.")
 
 # Push the changes to the remote repository
 subprocess.run(["git", "push"])
-print("Pushed changes to GitHub.")
+print("Pushed changes to GitHub")
