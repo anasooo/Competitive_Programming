@@ -1,3 +1,4 @@
+
 def solve(x):
     if x % 5 == 0:
         print(x//5)
@@ -5,4 +6,3 @@ def solve(x):
         print(x//5 + 1)
 x = int(input())
 solve(x)
-
