@@ -1,4 +1,3 @@
-from collections import Counter
 def solve(n,s):
     even_ind = [i for i in range(n) if s[i] % 2 == 0]
     odd_ind = [i for i in range(n) if s[i] % 2 != 0]
